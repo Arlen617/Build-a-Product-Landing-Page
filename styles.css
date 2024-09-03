@@ -29,6 +29,19 @@
 
 /* STYLES */
 
+body {
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    align-items: center;
+}
+
+body>* {
+    box-shadow: 2px 2px black;
+}
+
 h1 {
     font-family: "MedievalSharp";
     font-weight: 700;
@@ -43,13 +56,14 @@ body {
 }
 
 header {
-    background-color: var(--primary);
+    background-color: var(--background);
     width: 100%;
     padding-top: 1.1rem;
     padding-bottom: 1.1rem;
     position: fixed;
     top: 0;
     z-index: 1;
+    box-shadow: 2px 2px black;
 }
 
 h2 {
@@ -59,53 +73,58 @@ h2 {
 .header {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     width: 100%;
 }
 
 .staff-icon {
     display: block;
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     align-self: center;
 }
 
 nav {
     display: flex;
-    justify-content: space-around;
-    margin-top: 0.5rem;
+    justify-content: center;
+    gap: 1.1rem;
     flex-wrap: wrap;
 }
 
 a:any-link {
     text-decoration: none;
-    color: var(--primary);
-    background-color: var(--secondary);
-    padding: 0.2rem;
+    color: var(--text);
+    padding: 0.1rem;
     border-radius: 5px;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 a:hover,
 a:focus,
 input[type=submit]:hover {
     transform: scale(1.1);
+    color: var(--primary);
 }
-
 
 .banner {
     border-top: 2px solid var(--text);
     border-bottom: 2px solid var(--text);
     background-color: var(--secondary);
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
-    border-radius: 20px 15px 10px 5px;
+    border-radius: 30px;
     width: 90%;
-    margin: 10rem auto 0 auto;
+    align-self: center;
+    margin-top: 11.5rem;
 }
 
 section {
-    scroll-margin-top: 7.5rem;
+    scroll-margin-top: 9rem;
+    width: 95%;
+}
+
+section:last-of-type {
+    margin-bottom: 2rem;
 }
 
 section>div {
@@ -120,16 +139,8 @@ section>img{
     width: 30%;
     height: 30%;
     object-fit: cover;
-    border: 20px solid var(--accent);
+    border: 5px solid var(--accent);
     border-radius: var(--border-radius);
-}
-
-.Wands,
-.Orbs,
-.Staves,
-.ytvid {
-    width: 60%;
-    margin-top: 2rem;
 }
 
 .Wands,
@@ -139,13 +150,10 @@ section>img{
     flex-wrap: wrap;
     background-color: var(--primary);
     border-radius: var(--border-radius);
+    gap: 1.5rem;
 }
 
-
-
 .Wands {
-    margin-left: 35%;
-    gap: 2rem;
     justify-content: center;
     padding: 1%;
 }
@@ -153,23 +161,17 @@ section>img{
 
 
 .Orbs {
-    margin-right: 35%;
-    gap: 2rem;
     justify-content: center;
-    padding: 2rem;
+    padding: 1%;
 }
 
 .Staves {
-    gap: 2rem;
     justify-content: center;
-    padding: 2rem;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 1%;
 }
 
 .ytvid {
     height: auto;
-    margin: 2rem auto 0 auto;
     background-color: var(--accent);
     padding: 1rem;
     border-radius: var(--border-radius);
@@ -181,36 +183,36 @@ section>img{
     width: 100%;
     height: 315px;
     border-radius: var(--border-radius);
-    margin: 1rem auto 1rem auto;
     border: 30px solid var(--background);
 }
 
 form {
-    width: 60%;
+    width: 95%;
     background-color: var(--accent);
-    margin: 1rem auto 1rem auto;
     padding: 1rem;
     border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
 }
 
 input {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.25rem;
-    margin-top: 1rem;
+    font-size: 1rem;
     background: var(--background);
     border-radius: var(--border-radius);
-    padding: 1.1rem;
+    padding: 2%;
     width: 100%;
     color: var(--text);
     font-family: inherit;
+    text-align: center;
 }
 
 input[type=submit] {
     background-color: var(--primary);
     color: #1d075c;
-    width: 50%;
+    width: 80%;
+    align-self: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -219,34 +221,35 @@ input[type=submit] {
     }
 }
 
-@media screen and  (max-width: 760px) {
-  
-    nav {
-        flex-wrap: wrap;
+@media screen and (min-width: 424px) {
+    .banner {
+        margin-top: 7rem;
     }
-  
-    a:any-link {
-        padding: 0.1rem;
-        margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 767px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    nav {
+        gap: 2rem
     }
 
     .banner {
-        margin-top: 15rem;
-    }
-
-    .Wands,
-    .Orbs,
-    .Staves {
-        margin-left: auto;
-        margin-right: auto;
-        width: 95%;
-    }
-
-    .ytvid {
-        width: 90%;
+        margin-top: 8rem;
     }
 
     form {
-        width: 90%;
+        width: 70%;
+    }
+
+    section {
+        width: 70%;
+    }
+
+    section img {
+        width: 25%;
+        height: 25%;
     }
 }
